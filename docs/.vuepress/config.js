@@ -5,7 +5,7 @@ const filehelper = require('./utils/initPage.js')
 
 module.exports = {
 	title: 'Er Hang', // 网站标题
-	base:'/masterJ/',
+	base:'/masterJ.github.io/',
 	description: 'this is a font-end knowledge base', // 网站描述
 	head: [
 		['link', { rel: 'icon', href: '/favicon.ico' }], // 增加一个自定义的 favicon(网页标签的图标)
