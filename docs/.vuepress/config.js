@@ -39,7 +39,7 @@ module.exports = {
 			'/page/': [
 				// { title: '名字', path: '/page/' },
 				{
-					title: '那些年',
+					title: '带着小蔡学前端',
 					children: [
 						{
 							title: 'HTML',
@@ -65,6 +65,10 @@ module.exports = {
 									title: '常见问题',
 									path: 'css/lesson2',
 								},
+								{
+									title: '常用技巧(常见问题)',
+									path: 'css/lesson3'
+								}
 							],
 						},
 						{
