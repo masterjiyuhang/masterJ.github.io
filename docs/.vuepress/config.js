@@ -4,7 +4,7 @@ const utils = require('./utils/index.js')
 const filehelper = require('./utils/initPage.js')
 
 module.exports = {
-	title: 'Er Hang', // 网站标题
+	title: '小蔡同志', // 网站标题
 	base:'/masterJ.github.io/',
 	description: 'this is a font-end knowledge base', // 网站描述
 	head: [
@@ -37,56 +37,63 @@ module.exports = {
 		// 侧边栏
 		sidebar: {
 			'/page/': [
-				// { title: '名字', path: '/page/' },
 				{
-					title: '带着小蔡学前端',
+					title: 'HTML',
 					children: [
 						{
-							title: 'HTML',
-							children: [
-								{
-									title: '基础知识',
-									path: 'html/lesson1',
-								},
-								{
-									title: '常见问题',
-									path: 'html/lesson2',
-								},
-							],
+							title: '基础知识',
+							path: 'html/lesson1'
 						},
 						{
-							title: 'CSS',
-							children: [
-								{
-									title: '基础知识',
-									path: 'css/lesson1',
-								},
-								{
-									title: '常见问题',
-									path: 'css/lesson2',
-								},
-								{
-									title: '常用技巧(常见问题)',
-									path: 'css/lesson3'
-								}
-							],
+							title: '常见问题',
+							path: 'html/lesson2',
+						},
+					],
+				},
+				{
+					title: 'CSS',
+					children: [
+						{
+							title: '基础知识',
+							path: 'css/lesson1',
 						},
 						{
-							title: 'JavaScript',
-							children: [
-								{
-									title: '基础知识',
-									path: 'JavaScript/lesson1',
-								},
-								{
-									title: '常见问题',
-									path: 'JavaScript/lesson2',
-								},
-							]
+							title: '常见问题',
+							path: 'css/lesson2',
+						},
+						{
+							title: '常用技巧(常见问题)',
+							path: 'css/lesson3'
 						}
 					],
 				},
-			],
+				{
+					title: 'JavaScript',
+					children: [
+						{
+							title: '基础知识',
+							path: 'JavaScript/lesson1',
+						},
+						{
+							title: '常见问题',
+							path: 'JavaScript/lesson2',
+						},
+					]
+				},
+				{
+					title: 'Vue',
+					children: [
+						{
+							title: '基础知识',
+							path: 'Vue/lesson1',
+						},
+						{
+							title: '常见问题',
+							path: 'Vue/lesson2',
+						},
+					]
+				}
+			]
 		},
 		sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
 		lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
