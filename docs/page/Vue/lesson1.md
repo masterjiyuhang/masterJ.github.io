@@ -1,6 +1,11 @@
-## Vue源码
 
-### 目录分析
+Vue (读音 /vjuː/，类似于 **view**) 是一套用于构建用户界面的**渐进式框架**。
+
+## Vue2
+
+### vue2源码
+
+#### 目录分析
 
 vue的源码放在src文件夹下，该目录各文件的功能如下：
 
@@ -11,7 +16,7 @@ vue的源码放在src文件夹下，该目录各文件的功能如下：
 - sfc 文件解析
 - shared 共享代码
 
-### 打包构建
+#### 打包构建
 
 Vue打包时执行npm run build，在package.json中可以看到实际上执行的命令是`node script/build.js`，`build.js`文件中主要是首先在`scripts/config.js`文件下读取配置文件，构建出不同用途的Vue.js。在scripts/config.js文件下可以看到不同的配置。其中`enrty`表示入口，`dest`表示打包结束后放在哪，`format` 属性表示构建的格式（cjs即CommonJS规范、es即ES Module规范、umd即UMD规范）。
 
@@ -19,7 +24,7 @@ resolve函数用于处理传入的路径信息，将传输的信息转成数组�
 
 为了分析Vue的编译过程，看源码选择`Runtime+compiler CommonJS build`的 Vue.js。
 
-### 追根溯源
+#### 追根溯源
 
 在文件`src/platforms/web/entry-runtime-with-compiler.js`中引入`import Vue from './runtime/index'`。
 
@@ -38,7 +43,7 @@ function Vue (options) {
 }
 ~~~
 
-### 数据渲染
+#### 数据渲染
 
 20210615
 
@@ -318,7 +323,7 @@ export function mountComponent (
 
 - `_update` 是实例的一个私有方法，它被调用的时机有 2 个，一个是首次渲染，一个是数据更新的时候。
 
-#### 总结
+##### 总结
 
 1. Vue类中this._init方法。`_init`方法是Vue初始化的方法，主要包括合并配置，初始化生命周期，初始化事件中心，初始化渲染，初始化 data、props、computed、watcher 等等。最后通过`vm.$mount(vm.$options.el)`挂载实例。
 
@@ -350,7 +355,7 @@ export function mountComponent (
 
 5. `vm._update(vm._render(), hydrating)`
 
-### 数据响应式
+#### 数据响应式
 
 1. 采用`Object.defineProperty`实现。
 
@@ -417,23 +422,23 @@ export function mountComponent (
    - 最后利用 `Object.defineProperty` 去给 `obj` 的属性 `key` 添加 getter 和 setter。
 
 
-#### 依赖收集
+##### 依赖收集
 
 
 
 
 
-#### 派发更新
+##### 派发更新
 
 
 
-#### 总结
+##### 总结
 
 
 
 
 
-### 组件更新
+#### 组件更新
 
 ```js
 updateComponent = () => {
@@ -586,7 +591,7 @@ function sameVnode (a, b) {
 
 
 
-#### 总结
+##### 总结
 
 **新旧节点相同**
 
@@ -608,13 +613,7 @@ function sameVnode (a, b) {
 2. 更新父的占位符节点。找到当前 `vnode` 的父的占位符节点，先执行各个 `module` 的 `destroy`的钩子函数，如果当前占位符是一个可挂载的节点，则执行 `module` 的 `create` 钩子函数。
 3. 删除旧节点。把 `oldVnode` 从当前 DOM 树中删除，如果父节点存在，则执行 `removeVnodes` 方法。
 
-## Vue3源码
 
-Vue.js 2.x 的源码在 src 目录下，依据功不同分成 compiler（模板编译的相关代码）、core（与平台无关的通用运行时代码）、platforms（平台专有代码）、server（服务端渲染的相关代码）、sfc（.vue 单文件解析相关代码）、shared（共享工具代码） 等目录。
-
- Vue.js 3.0中 ，源码通过 monorepo 的方式管理，根据功能将不同的模块拆分到 packages 目录下。
-
-可以看出相对于 Vue.js 2.x 的源码组织方式，monorepo 把这些模块拆分到不同的 package 中，每个 package 有各自的 API、类型定义和测试。这样使得模块拆分更细化，职责划分更明确，模块之间的依赖关系也更加明确，开发人员也更容易阅读、理解和更改所有模块源码，提高代码的可维护性。
 
 ## Vue3
 
@@ -801,3 +800,11 @@ computed()用来创建计算属性,返回值是一个ref的实例。
 watch : 创建 watch 监听 
 
 watchEffect : 如果响应性的属性有变更，就会触发这个函数
+
+### Vue3源码
+
+Vue.js 2.x 的源码在 src 目录下，依据功不同分成 compiler（模板编译的相关代码）、core（与平台无关的通用运行时代码）、platforms（平台专有代码）、server（服务端渲染的相关代码）、sfc（.vue 单文件解析相关代码）、shared（共享工具代码） 等目录。
+
+ Vue.js 3.0中 ，源码通过 monorepo 的方式管理，根据功能将不同的模块拆分到 packages 目录下。
+
+可以看出相对于 Vue.js 2.x 的源码组织方式，monorepo 把这些模块拆分到不同的 package 中，每个 package 有各自的 API、类型定义和测试。这样使得模块拆分更细化，职责划分更明确，模块之间的依赖关系也更加明确，开发人员也更容易阅读、理解和更改所有模块源码，提高代码的可维护性。

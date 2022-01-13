@@ -17,6 +17,7 @@ module.exports = {
 	themeConfig: {
 		search: true, //搜索
 		searchMaxSuggestions: 10,
+		subSidebar: 'auto',
 		noFoundPageByTencent: false, // 关闭404
 		// 导航栏
 		nav: [
@@ -93,6 +94,10 @@ module.exports = {
 							title: '常见问题',
 							path: 'Vue/lesson2',
 						},
+						{
+							title: 'vite的使用',
+							path: 'Vue/vite'
+						}
 					]
 				}
 			]
