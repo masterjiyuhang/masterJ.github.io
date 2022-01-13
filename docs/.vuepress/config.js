@@ -4,7 +4,7 @@ const utils = require('./utils/index.js')
 const filehelper = require('./utils/initPage.js')
 
 module.exports = {
-	title: '小蔡同志', // 网站标题
+	title: '二航的小破站', // 网站标题
 	base:'/masterJ.github.io/',
 	description: 'this is a font-end knowledge base', // 网站描述
 	head: [
@@ -32,7 +32,7 @@ module.exports = {
 					},
 				],
 			},
-			{ text: '关于', link: '/about/' },
+			{ text: '一些小建议', link: '/about/' },
 		],
 		// 侧边栏
 		sidebar: {
