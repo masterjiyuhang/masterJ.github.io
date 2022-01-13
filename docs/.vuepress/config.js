@@ -17,6 +17,7 @@ module.exports = {
 	themeConfig: {
 		search: true, //搜索
 		searchMaxSuggestions: 10,
+		noFoundPageByTencent: false, // 关闭404
 		// 导航栏
 		nav: [
 			{ text: '首页', link: '/' },
