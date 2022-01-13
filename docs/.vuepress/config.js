@@ -13,6 +13,7 @@ module.exports = {
 	markdown: {
 		lineNumbers: true, // 代码块显示行号
 	},
+	theme: 'reco',
 	themeConfig: {
 		search: true, //搜索
 		searchMaxSuggestions: 10,
