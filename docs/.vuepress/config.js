@@ -97,6 +97,10 @@ module.exports = {
 						{
 							title: 'vite的使用',
 							path: 'Vue/vite'
+						},
+						{
+							title: 'css开发规范',
+							path: 'Vue/css'
 						}
 					]
 				}
